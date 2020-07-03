@@ -6,7 +6,7 @@ class Gauss_legendre_quadrature:
         self.legendre_w=[0.2369268850561892,0.4786286704993669,0.568888888888889,0.4786286704993672,0.2369268850561891]
 
     def function1(self,x):
-        return x**2
+        return x
 
     def function2(self,x,y):
         return x*y
