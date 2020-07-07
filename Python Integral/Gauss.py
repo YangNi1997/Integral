@@ -21,7 +21,7 @@ def func1(x):
     return function
 
 def func2(x):
-    function=x*3
+    function=x*4
     return function
 
 test1=GaussLegendreQuadrature(2,4)
