@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import numpy as np
-from Base_Class import BaseQuadrature
+from BaseQuadrature import BaseQuadrature
 
 class GaussLegendreQuadrature(BaseQuadrature):
     def __init__(self,a_1,b_1):
