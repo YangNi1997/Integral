@@ -12,5 +12,4 @@ class BaseQuadrature:
         x_array=self.legendre_x*(self.bound_max-self.bound_min)/2+(self.bound_min+self.bound_max)/2
         fvalue_array=func(x_array)
         quadrature=(self.bound_max-self.bound_min)/2*np.sum(self.legendre_w*fvalue_array)
-        print(quadrature)
         return quadrature
