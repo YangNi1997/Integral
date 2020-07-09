@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import unittest
 import math
-from Gauss import GaussLegendreQuadrature
+from GaussLegendreQuadrature import GaussLegendreQuadrature
 
-class TestGauss(unittest.TestCase):
+class TestGaussLegendre(unittest.TestCase):
     def test_function1(self):
         test1=GaussLegendreQuadrature(2,6)
         self.assertAlmostEqual((test1.b*test1.b-test1.a*test1.a)/2,test1.integral(func1))
