@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 import unittest
-import math
+import Function
 from GaussLegendreQuadrature import GaussLegendreQuadrature
 
 class TestGaussLegendre(unittest.TestCase):
     def test_function1(self):
         test1=GaussLegendreQuadrature(2,6)
-        self.assertAlmostEqual((test1.b*test1.b-test1.a*test1.a)/2,test1.integral(func1))
+        self.assertAlmostEqual((test1.bound_max*test1.bound_max-test1.bound_min*test1.bound_min)/2,test1.integral(Function.mutiply_one))
 
     def test_function2(self):
         test2=GaussLegendreQuadrature(1,8)
-        self.assertAlmostEqual((test2.b*test2.b-test2.a*test2.a)*1.5,test2.integral(func2))
+        self.assertAlmostEqual(test2.bound_max*test2.bound_max-test2.bound_min*test2.bound_min,test2.integral(Function.multiply_two))
 
 def func1(x):
     function=x
