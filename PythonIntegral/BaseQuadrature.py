@@ -3,13 +3,17 @@ import numpy as np
 
 class BaseQuadrature:
     def __init__(self,min,max):
-        self.bound_min=min
-        self.bound_max=max
+        self.bound_array=np.linspace(min,max,num=10,dtype=float)
         self.legendre_x=None
         self.legendre_w=None
 
     def integral(self,func):
-        x_array=self.legendre_x*(self.bound_max-self.bound_min)/2+(self.bound_min+self.bound_max)/2
-        fvalue_array=func(x_array)
-        quadrature=(self.bound_max-self.bound_min)/2*np.sum(self.legendre_w*fvalue_array)
-        return quadrature
+        quadrature_result=0
+        for i in range(9):
+            bound_min=self.bound_array[i]
+            bound_max=self.bound_array[i+1]
+            x_array=self.legendre_x*(bound_max-bound_min)/2+(bound_min+bound_max)/2
+            fvalue_array=func(x_array)
+            quadrature=(bound_max-bound_min)/2*np.sum(self.legendre_w*fvalue_array)
+            quadrature_result+=quadrature
+        return quadrature_result
