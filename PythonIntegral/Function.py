@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def mutiply_one(x):
+def multiply_one(x):
     function=x
     return function
 
